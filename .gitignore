@@ -1,0 +1,89 @@
+# Catkin/ROS build and devel artifacts
+build/
+devel/
+install/
+logs/
+*.rosinstall
+*.rosinstall.bak
+*.catkin
+CATKIN_IGNORE
+catkin_generated/
+
+# ROS log files
+*.log
+*.log.*
+
+# IDE and editor specific files
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+.cproject
+bin/
+tmp/
+
+# Netbeans
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VS Code
+.vscode/
+
+# QtCreator
+*.pro.user
+*.pro.user.*
+*.user
+
+# Python artifacts
+*.pyc
+*.pyo
+__pycache__/
+*.eggs
+*.egg-info/
+dist/
+build/ # Python distutils build directory, if separate from catkin's
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+ENV/
+VENV/
+
+# Backup files
+*~
+*.swp
+*.swo
+*.bak
+*.old
+*.orig
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Large data files (consider Git LFS for these if they must be versioned)
+# *.bag
+# *.pcd
+# *.ply
+# *.stl # Sometimes STLs are part of the source, sometimes generated/downloaded
+# *.dae # Similar to STL
+
+# Specific to this project (test_03), if needed and not covered above
+# For example, if you download large Gazebo models locally into the package
+# but don't want to commit them.
+# test_03/models/downloaded_large_model/
+
+# If you have local configuration files that shouldn't be shared
+# config/local_params.yaml

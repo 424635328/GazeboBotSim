@@ -1,0 +1,44 @@
+<robot name="mycar" xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <!-- Include inertial calculation macros -->
+    <xacro:include filename="$(find test_03)/xacro/head.xacro" />
+
+    <!-- Define PI here to be globally accessible if not defined in included files -->
+    <xacro:property name="PI" value="3.141592653589793"/>
+
+    <!-- Include robot components -->
+    <!-- Properties like base_link_length are defined within car_base.xacro -->
+    <!-- and should be accessible by camera.xacro and laser.xacro -->
+    <!-- if they are included in the correct order or properties are scoped correctly. -->
+    <!-- It's generally safer to pass them as parameters if there are scope issues. -->
+    <!-- For now, we assume xacro's property scoping handles this. -->
+    <xacro:include filename="$(find test_03)/xacro/car_base.xacro" />
+    <xacro:include filename="$(find test_03)/xacro/camera.xacro" />
+    <xacro:include filename="$(find test_03)/xacro/laser.xacro" />
+
+    <!-- Add Differential Drive Plugin for Movement -->
+    <!-- This plugin subscribes to cmd_vel and moves the robot -->
+    <gazebo>
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>100</updateRate>
+            <leftJoint>left_wheel_to_base_link</leftJoint>
+            <rightJoint>right_wheel_to_base_link</rightJoint>
+            <wheelSeparation>${2 * base_link_radius}</wheelSeparation> <!-- Distance between center of wheels -->
+            <wheelDiameter>${2 * wheel_radius}</wheelDiameter>
+            <torque>20</torque>
+            <commandTopic>cmd_vel</commandTopic>
+            <odometryTopic>odom</odometryTopic>
+            <odometryFrame>odom</odometryFrame>
+            <robotBaseFrame>base_footprint</robotBaseFrame>
+            <publishWheelTF>true</publishWheelTF>
+            <publishWheelJointState>true</publishWheelJointState>
+            <rosDebugLevel>Debug</rosDebugLevel>
+            <wheelAcceleration>1</wheelAcceleration>
+            <wheelTorque>5</wheelTorque>
+            <odometrySource>world</odometrySource> <!-- 'world' or 'encoder' -->
+            <publishTf>1</publishTf>
+        </plugin>
+    </gazebo>
+
+</robot>
