@@ -1,4 +1,4 @@
-# 基于Gazebo的机器人仿真实验 (test_03)
+# 基于Gazebo的机器人仿真实验
 
 本项目旨在指导用户在 Ubuntu 18.04 系统下，使用 ROS Melodic 和 Gazebo 9，完成一个自定义机器人模型的创建、Gazebo环境集成、以及复杂的运动控制。实验内容包括 URDF/Xacro 编程、Gazebo 仿真环境搭建与机器人加载、以及通过键盘和多种Python脚本（包括开环、闭环PID及自适应PID尝试）控制机器人运动。
 
