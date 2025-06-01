@@ -52,7 +52,7 @@ __pycache__/
 *.eggs
 *.egg-info/
 dist/
-build/ # Python distutils build directory, if separate from catkin's
+build/ 
 # Virtual environments
 venv/
 env/
@@ -74,11 +74,13 @@ VENV/
 Thumbs.db
 
 # Large data files (consider Git LFS for these if they must be versioned)
-# *.bag
-# *.pcd
-# *.ply
-# *.stl # Sometimes STLs are part of the source, sometimes generated/downloaded
-# *.dae # Similar to STL
+*.bag
+*.pcd
+*.ply
+# Sometimes STLs are part of the source, sometimes generated/downloaded
+*.stl
+# Similar to STL
+*.dae
 
 # Specific to this project (test_03), if needed and not covered above
 # For example, if you download large Gazebo models locally into the package

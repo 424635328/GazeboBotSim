@@ -258,9 +258,9 @@ roslaunch test_03 display_mycar_custom_world.launch
   * 实现了基于PID控制器的航点导航。机器人按顺序访问在脚本头部定义的 `TARGET_WAYPOINTS`。
   * 包含对线速度、角速度的平滑控制、末端精确停靠逻辑以及可配置的PID参数。
 * **`self_adjust.py`**:
-  * *(请根据此脚本的实际功能进行详细描述。例如：一个实验性的自适应PID控制脚本，尝试根据机器人的实时运动性能（如超调、震荡、稳定时间）动态调整PID参数，以适应不同的运动条件和速度设定。)*
+  * 一个实验性的自适应PID控制脚本，尝试根据机器人的实时运动性能（如超调、震荡、稳定时间）动态调整PID参数，以适应不同的运动条件和速度设定。
 * **`test.py`**:
-  * *(请根据此脚本的实际功能进行详细描述。例如：用于测试特定机器人功能、传感器数据处理、或小段运动控制算法的通用测试脚本。)*
+  * 用于测试特定机器人功能、传感器数据处理、或小段运动控制算法的通用测试脚本。
 
 ### 其他文件
 
@@ -268,7 +268,7 @@ roslaunch test_03 display_mycar_custom_world.launch
 * **`CMakeLists.txt`**: Catkin编译系统的构建规则文件。
 * **`package.xml`**: ROS功能包的清单文件，描述了包的依赖、作者、许可证等信息。
 * **`rviz/mycar_gazebo.rviz`**: RViz的配置文件，保存了显示项（如RobotModel, TF, LaserScan, Image, Odometry）和视图设置。
-* **`fallback.txt`**: *(未知用途，如果它是项目的一部分，请在此处说明其功能。如果不是，可以从项目中移除。)*
+* **`fallback.txt`**: 保存系统回调文件内容
 
 ---
 
@@ -300,7 +300,7 @@ roslaunch test_03 display_mycar_custom_world.launch
   * 尝试在 launch 文件中添加 `<env name="LIBGL_ALWAYS_SOFTWARE" value="true"/>`。
   * 更新 VMware Tools / 调整3D加速设置。
 * **`[rosrun] Couldn't find executable named ... or not executable`**:
-  * Python 脚本没有执行权限: `chmod +x path/to/script.py`。
+  * Python 脚本没有执行权限: `chmod +x *.py`。
   * 未 `source devel/setup.bash`。
 * **机器人模型在 Gazebo 中抖动/滑动**:
   * 检查 `<inertial>` 标签是否正确且合理。
