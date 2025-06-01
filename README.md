@@ -109,7 +109,7 @@ mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 
 # 2. (如果需要) 克隆或复制 test_03 功能包到此 src 目录下
-# git clone <repository_url> test_03  或者 cp -r /path/to/TEST_03 ./test_03
+# git clone https://github.com/424635328/GazeboBotSim test_03  或者 cp -r /path/to/TEST_03 ./test_03
 # (确保包名是 test_03，而不是 TEST_03，以匹配 rosrun/roslaunch)
 
 # 3. 返回工作空间根目录
